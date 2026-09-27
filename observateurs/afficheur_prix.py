@@ -5,13 +5,8 @@ class AfficheurPrix(Observateur):
         self.dashboard = dashboard
 
     def actualiser(self, sujet) -> None:
-<<<<<<< HEAD
-        donnes = sujet.get_donnees()
-        prix_actuels = donnes.get("prix_actuels")
-=======
         donnees = sujet.get_donnees()
         prix_actuels = donnees["prix_actuels"]
->>>>>>> c25dbb6facf7024f57c66b18b51f43eafb9bdd5e
 
         for ticker, (prix, ouverture) in prix_actuels.items():
             variation = (prix - ouverture) / ouverture * 100
