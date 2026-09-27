@@ -5,9 +5,9 @@ class AfficheurPortfolio(Observateur):
         self.dashboard = dashboard
 
     def actualiser(self, sujet) -> None:
-        donnes = sujet.get_donnes()
+        donnes = sujet.get_donnees()
 
-        titre = donnes["titres"]
+        titres = donnes["titres"]
         prix_actuels = donnes["prix_actuels"]
 
         valeur_totale = sum(prix * titres[ticker]["quantite"] for ticker, (prix,ouverture) in prix_actuels.items())

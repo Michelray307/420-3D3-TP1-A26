@@ -1,11 +1,11 @@
 from .observateur  import Observateur
 
 class AfficheurPrix(Observateur):
-    def __init__(self,label):
-        self.label = label
+    def __init__(self, dashboard):
+        self.dashboard = dashboard
 
     def actualiser(self, sujet) -> None:
-        donnes = sujet.get_donnes()
+        donnes = sujet.get_donnees()
         prix_actuels = donnes.get("prix_actuels")
 
         for ticker, (prix,ouverture) in prix_actuels.items():

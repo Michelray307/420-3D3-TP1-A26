@@ -6,8 +6,8 @@ class Portefeuille(Sujet):
         super().__init__()
         self.titres = titres
         self.prix_actuels = {}
-
-    def recuperer_prix(ticker):
+    
+    def recuperer_prix(self, ticker):
         info = yf.Ticker(ticker).fast_info
         prix = info["last_price"]
 
