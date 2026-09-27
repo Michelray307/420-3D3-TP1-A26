@@ -2,11 +2,15 @@ from .sujet import Sujet
 import yfinance as yf
 
 class Portefeuille(Sujet):
-    def __init__(self, titres):
+    def __init__(self, titres: dict):
         super().__init__()
         self.titres = titres
         self.prix_actuels = {}
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c25dbb6facf7024f57c66b18b51f43eafb9bdd5e
     def recuperer_prix(self, ticker):
         info = yf.Ticker(ticker).fast_info
         prix = info["last_price"]

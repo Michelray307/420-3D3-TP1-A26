@@ -1,14 +1,19 @@
-from .observateur  import Observateur
+from .observateur import Observateur
 
 class AfficheurPrix(Observateur):
     def __init__(self, dashboard):
         self.dashboard = dashboard
 
     def actualiser(self, sujet) -> None:
+<<<<<<< HEAD
         donnes = sujet.get_donnees()
         prix_actuels = donnes.get("prix_actuels")
+=======
+        donnees = sujet.get_donnees()
+        prix_actuels = donnees["prix_actuels"]
+>>>>>>> c25dbb6facf7024f57c66b18b51f43eafb9bdd5e
 
-        for ticker, (prix,ouverture) in prix_actuels.items():
+        for ticker, (prix, ouverture) in prix_actuels.items():
             variation = (prix - ouverture) / ouverture * 100
 
             symbole = "▲" if variation >= 0 else "▼"
@@ -16,6 +21,7 @@ class AfficheurPrix(Observateur):
 
             texte = f"{prix:.2f} $  {symbole} {abs(variation):.2f}%"
 
-            self.dashboard.labels_prix[ticker].config(text=texte,fg=couleur)
-
-            
+            self.dashboard.labels_prix[ticker].config(
+                text=texte,
+                fg=couleur
+            )
